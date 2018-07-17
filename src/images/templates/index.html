@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="header__block">Save Document</div>
+  <div class="spacer"></div>
+</header>
+
+<div class="content">
+  <div class="content__sidebar">
+    <div>
+      <ul class="image-list">
+        <li
+          ng-repeat="image in images"
+          ng-click="handleImageClick(image)"
+          ng-style="{ 'background-image': 'url({{image.base64}})' }"
+          ng-class="['image-list__item', (image === selectedImage) ? 'image-list__item_selected' : '']">
+        </li>
+      </ul>
+      <div class="new-image-button" ng-click="handleNewImageClick()"></div>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <div class="workspace__area workspace__area_preview"
+      ng-style="{ 'background-image': getWorkspaceAreaStyle() }">
+      <img
+        ng-hide="ie11 || !selectedImage"
+        ng-src="{{selectedImage.base64}}"
+        class="workspace__img"
+        alt="Preview">
+    </div>
+    <div class="workspace__controls">
+      <div class="spacer"></div>
+      <div
+        ng-click="handleEditClick(selectedImage)"
+        class="workspace__button workspace__button_edit"
+        ng-disabled="!selectedImage">
+      </div>
+      <div
+        ng-click="handleTrashClick(selectedImage)"
+        class="workspace__button workspace__button_trash"
+        ng-disabled="!selectedImage">
+      </div>
+    </div>
+  </div>
+</div>

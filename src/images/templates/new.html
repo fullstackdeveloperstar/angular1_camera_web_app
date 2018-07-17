@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="header__block">Scan Page</div>
+  <div class="spacer"></div>
+  <div class="header__block">
+    <a class="header__text-button" href="/">Back</a>
+  </div>
+</header>
+
+<div class="content">
+  <div class="workspace">
+    <div class="workspace__area">
+      <!--
+      <video ng-show="hasCamera" class="workspace__camera"></video>
+      <div ng-hide="hasCamera" class="camera-warning">
+        <div class="camera-warning__icon"></div>
+        <p class="camera-warning__text">Camera is not available.</p>
+      </div>
+      -->
+    </div>
+    <div class="workspace__controls">
+      <div class="workspace__empty-button" ng-show="hasStream"></div>
+      <div class="spacer"></div>
+      <div
+        ng-click="handleCameraClick()"
+        ng-disabled="false"
+        class="workspace__button workspace__button_camera">
+      </div>
+      <div class="spacer"></div>
+      <div
+        ng-click="handleFlipCameraClick()"
+        class="workspace__button workspace__button_flip-camera"
+        ng-show="hasStream">
+      </div>
+    </div>
+  </div>
+</div>

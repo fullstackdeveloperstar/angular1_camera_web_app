@@ -1,0 +1,71 @@
+<header class="header">
+  <div class="header__block">Edit Image</div>
+  <div class="spacer"></div>
+  <div class="header__block">
+    <a
+      ng-click="handleNextClick($event)"
+      class="header__text-button"
+      href="/">
+      Next
+    </a>
+  </div>
+</header>
+
+<div class="content">
+  <div class="workspace">
+    <div class="workspace__area workspace__area_preview">
+      <!--
+      <img
+        ng-hide="!image"
+        ng-src="{{image.base64}}"
+        id="js-edit-image"
+        class="workspace__img"
+        alt="Preview">
+      -->
+    </div>
+    <div class="workspace__controls" ng-hide="isCropping">
+      <div
+        ng-click="handleCropClick()"
+        class="workspace__button workspace__button_crop">
+      </div>
+      <div
+        ng-click="handleRotateClick()"
+        class="workspace__button workspace__button_rotate">
+      </div>
+      <div class="spacer"></div>
+      <div class="workspace__icon workspace__icon_sun"></div>
+      <input
+        type="range" min="-10" max="10" value="0" step="2"
+        name="brightness"
+        ng-model="brightnessValue"
+        ng-change="handleBrightnessChange()"
+      />
+      <div class="workspace__icon workspace__icon_sun"></div>
+      <div class="spacer"></div>
+      <div
+        ng-click="handleReverseClick()"
+        class="workspace__button workspace__button_reverse">
+      </div>
+      <div
+        ng-click="handleTrashClick(image)"
+        class="workspace__button workspace__button_trash">
+      </div>
+    </div>
+
+    <div class="workspace__controls" ng-show="isCropping">
+      <div class="workspace__empty-button"></div>
+      <div class="workspace__empty-button"></div>
+      <div class="spacer"></div>
+      <div
+        ng-click="handleCropConfirmClick()"
+        class="workspace__button workspace__button_check">
+      </div>
+      <div class="spacer"></div>
+      <div
+        ng-click="handleCropCancelClick()"
+        class="workspace__button workspace__button_reverse">
+      </div>
+      <div class="workspace__empty-button"></div>
+    </div>
+  </div>
+</div>
